@@ -1,0 +1,14 @@
+<% include ./partials/header.ejs %>
+<div class="h-screen w-full text-white bg-zinc-700 flex-col flex items-center justify-center">
+    <div class=" h-80 flex items-center rounded-lg justify-center w-72 bg-black flex-col relative">
+        <form class="" action="/changedetail" method="post">
+            <h4 class="mb-1">Name</h4>
+            <input class="w-full text-black font-semibold text-lg mb-4 px-4 py-1 rounded-lg" type="text" name="name" value="<%= user.name %>"><br>
+            <h4 class="mb-1">Username</h4>
+            <input class="mb-7 w-full text-black font-semibold text-lg px-4 py-1 rounded-lg" type="text" name="username" value="<%= user.username %>"><br>
+            <input class="bg-blue-500 px-4 py-2 rounded-lg ml-[27%]" type="submit" value="Update">
+        </form>
+        <a class="absolute text-sm bottom-3 right-2" href="/change-password">Want To Change Password ?</a>
+    </div>
+</div>
+<% include ./partials/footer.ejs %>

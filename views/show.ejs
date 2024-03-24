@@ -1,0 +1,16 @@
+<% include ./partials/header.ejs %>
+<div class="w-full overflow-hidden h-screen bg-zinc-700 px-10 text-white py-8">
+    <div class="cards relative flex flex-wrap flex gap-7 h-full w-full">
+        <% user.posts.forEach(function(card){ %>
+            <div class="card relative h-52 w-64 ">
+                <div class="bg-sky-500 overflow-hidden rounded-lg w-64 h-40">
+                    <img class="w-full h-full object-cover" src="/images/uploads/<%= card.image %>" alt="">
+                </div>
+                <h5 class="px-2 mt-2 text-xl w-full"><%= card.title %></h5>
+                <a href="/editpost/<%= card.id %>"><i class="ri-pencil-line absolute bottom-3 right-[20%] inline-block"></i></a>
+                <a href="/delete/<%= card._id %>"><i class="ri-delete-bin-7-line absolute bottom-3 right-4 inline-block"></i></a>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<% include ./partials/footer.ejs %>

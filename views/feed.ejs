@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs %>
+<div class="w-full overflow-hidden h-screen bg-zinc-700 px-10 text-white py-8">
+    <div class="cards flex flex-wrap gap-7 h-full w-full px-5">
+        <% posts.forEach(function(card){ %>
+            <a href="/show/post/<%= card._id %>" class="card h-52 w-64 ">
+                <div class="bg-sky-500 overflow-hidden rounded-lg w-64 h-40">
+                    <img class="w-full h-full object-cover" src="/images/uploads/<%= card.image %>" alt="">
+                </div>
+                <h5 class="px-2 mt-2 text-xl w-full"><%= card.title %></h5>
+                <h4 class="px-2 text-sm w-full capitalize">@<%= card.user.username %></h4>
+            </a>
+        <% }) %>
+    </div>
+</div>
+<% include ./partials/footer.ejs %>
